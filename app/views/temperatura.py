@@ -9,12 +9,17 @@ temperatura = Blueprint("temperatura", __name__)
 def listar_temperatura():
     lista_temperaturas = Temperatura.get_all()
     json_temperaturas = temperatura_schema.dump(lista_temperaturas, many=True)
-    return jsonify(json_temperaturas), 200
+
+    return jsonify({
+        "estado": True,
+        "message": "datos de temperatura",
+        "data": json_temperaturas}
+    ), 200
 
 
 @temperatura.post("/registrar")
 def registrar_temperaturas():
     json_data = request.get_json()
-    temperatura = temperatura_schema.load(json_data)
-    temperatura.save()
+    temperatura_model = temperatura_schema.load(json_data)
+    temperatura_model.save()
     return Response(status=201)

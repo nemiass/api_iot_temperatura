@@ -1,6 +1,7 @@
 from app.db import db
 from app.db import BaseModelMixin
 
+
 class Temperatura(db.Model, BaseModelMixin):
 
     __tablename__ = "temperatura_historial"
@@ -14,4 +15,3 @@ class Temperatura(db.Model, BaseModelMixin):
         self.temperatura = temperatura
         self.fecha = fecha
         self.codigo = codigo
-

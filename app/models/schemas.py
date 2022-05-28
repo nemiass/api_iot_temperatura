@@ -12,6 +12,5 @@ class TemperaturaSchema(ma.Schema):
     def create_temperatura(self, data, **kwargs):
         return Temperatura(**data)
 
+
 temperatura_schema = TemperaturaSchema()
-
-

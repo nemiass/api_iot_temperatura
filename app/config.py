@@ -1,4 +1,3 @@
-
 class DevCofig:
     # local
     SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:@localhost:3306/iot_temperatura"
